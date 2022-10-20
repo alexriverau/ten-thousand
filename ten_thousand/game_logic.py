@@ -14,8 +14,8 @@ class GameLogic:
         return number_list
 
 
-# if __name__ == '__main__':
-#     print('ran directly as a module')
+if __name__ == '__main__':
+    print('ran directly as a module')
 #     # to execute run: python -m ten_thousand.game_logic
 #     # Executing without the -m "can" have a different import structure in certain aspects when doing multiple imports
 #     # from different folders
