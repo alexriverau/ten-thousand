@@ -12,8 +12,16 @@
 
 ### Setup
 
+* How to initialize/run your application
+
+python3 game_logic.py
+
+[Game](http://www.playonlinedicegames.com/farkle)
+
 ### Tests
 
+[Test](tests/version_1/test_calculate_score.py)
+
 * How do you run tests?
-* Any tests of note?
-* Describe any tests that you did not complete, skipped, etc
+
+pytest test_calculate_score.py
