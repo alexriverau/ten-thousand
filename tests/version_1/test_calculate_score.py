@@ -4,56 +4,56 @@ from ten_thousand.game_logic import GameLogic
 pytestmark = [pytest.mark.version_1]
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_single_five():
     actual = GameLogic.calculate_score((5,))
     expected = 50
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_single_one():
     actual = GameLogic.calculate_score((1,))
     expected = 100
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_two_fives():
     actual = GameLogic.calculate_score((5, 5))
     expected = 100
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_two_ones():
     actual = GameLogic.calculate_score((1, 1))
     expected = 200
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_one_and_five():
     actual = GameLogic.calculate_score((1, 5))
     expected = 150
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_zilch():
     actual = GameLogic.calculate_score((2,))
     expected = 0
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_three_fives():
     actual = GameLogic.calculate_score((5, 5, 5, 2, 2, 3))
     expected = 500
     assert actual == expected
 
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_three_ones():
     actual = GameLogic.calculate_score((1, 1, 1, 2, 3, 4))
     expected = 1000
