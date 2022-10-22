@@ -2,8 +2,6 @@ from collections import Counter
 
 
 class GameLogic:
-    pass
-
     @staticmethod
     def roll_dice(dice):
         import random
