@@ -1,8 +1,8 @@
-# LAB - Class 06
+# Lab: 07 - Guided Project II
 
 ---
 
-## Project: Ten Thousand - version 1
+## Project: Ten Thousand 2
 
 ### Author: Group 2
 * Monika Davies 
@@ -10,18 +10,15 @@
 
 ### Links and Resources
 
+* [Rules](https://en.wikipedia.org/wiki/Dice_10000)
+* [Game](http://www.playonlinedicegames.com/farkle)
+
 ### Setup
 
 * How to initialize/run your application
 
-python3 game_logic.py
-
-[Game](http://www.playonlinedicegames.com/farkle)
+python3 game.py
 
 ### Tests
 
-[Test](tests/version_1/test_calculate_score.py)
-
-* How do you run tests?
-
-pytest test_calculate_score.py
+[version_2](/Users/Alex/projects/code401/ten-thousand/tests/version_2)
