@@ -1,8 +1,8 @@
-# Lab: 07 - Guided Project II
+# Lab: 08 - Guided Project III
 
 ---
 
-## Project: Ten Thousand 2
+## Project: Ten Thousand 3
 
 ### Author: Group 2
 * Monika Davies 
@@ -21,4 +21,4 @@ python3 game.py
 
 ### Tests
 
-[version_2](/Users/Alex/projects/code401/ten-thousand/tests/version_2)
+[version_3](/Users/Alex/projects/code401/ten-thousand/tests/version_3)
