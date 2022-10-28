@@ -1,8 +1,8 @@
 import sys
-# from ten_thousand import game_logic
-# from ten_thousand import banker
-import game_logic
-import banker
+from ten_thousand import game_logic
+from ten_thousand import banker
+# import game_logic
+# import banker
 
 
 class Game:
@@ -51,9 +51,35 @@ class Game:
         return roll
 
     @staticmethod
+    def validate_keepers(roll, keepers):
+        values = {}
+        for die in roll:
+            values.setdefault(str(die), 0)
+            values[str(die)] += 1
+        for num in keepers:
+            if str(num) not in values or values[str(num)] == 0:
+                return False
+            values[str(num)] -= 1
+        return True
+
+    @staticmethod
     def get_player_selection(roll):
         print('Enter dice to keep, or (q)uit:')
         selection = input('> ')
+        if selection.lower() == 'q' or selection.lower() == 'quit':
+            return selection
+
+        selection = [int(char) for char in selection]
+        selection = tuple(selection)
+
+        while not Game.validate_keepers(roll, selection):
+            print('Cheater!!! Or possibly made a typo...')
+            Game.print_roll(roll)
+            selection = input('> ')
+            if selection.lower() == 'q' or selection.lower() == 'quit':
+                break
+            selection = [int(char) for char in selection]
+            selection = tuple(selection)
         return selection
 
     @staticmethod
