@@ -42,3 +42,19 @@ class GameLogic:
                 if die[0] == 1:
                     score += 100 * die[1]
         return score
+
+    @staticmethod
+    def get_scorers(roll):
+        roll = list(roll)
+        max_score = GameLogic.calculate_score(roll)
+
+        scorers = []
+
+        for idx, die in enumerate(roll):
+            del roll[idx]
+            score = GameLogic.calculate_score(roll)
+            if score < max_score:
+                scorers.append(die)
+            roll.insert(idx, die)
+
+        return tuple(scorers)

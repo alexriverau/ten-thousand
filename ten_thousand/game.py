@@ -128,11 +128,16 @@ class Game:
             Game.zilch()
             return
 
+        # selection is a string if the user chose to quit, otherwise it's a tuple
         selection = Game.get_player_selection(roll)
 
         if selection == 'q' or selection == 'quit':
             Game.quit(f'Thanks for playing. You earned {Game.bank.balance} points')
             return
+
+        # if len(selection) == len(roll) and Game.game.all_score(roll):
+        #     Game.hot_dice(roll)
+        #     return
 
         dice = Game.save_player_dice(selection)
         points = Game.game.calculate_score(dice)
