@@ -1,8 +1,8 @@
 import sys
 from ten_thousand import game_logic
 from ten_thousand import banker
-# import game_logic
-# import banker
+#import game_logic
+#import banker
 
 
 class Game:
@@ -137,54 +137,6 @@ class Game:
         if action == 'q' or action == 'quit':
             Game.quit(f'Thanks for playing. You earned {Game.bank.balance} points')
             return
-
-    # @staticmethod
-    # def bank():
-    #     global total_score
-    #     global round
-    #     global num
-    #     global kept_dice
-    #
-    #     print('Enter dice to keep, or (q)uit:')
-    #     response = input('> ')
-    #     if response == 'q' or response == 'quit':
-    #         print(f'Thanks for playing. You earned {total_score} points')
-    #         global playing
-    #         playing = False
-    #
-    #     else:
-    #         # Convert user input string into list of integers
-    #         dice = []
-    #         for die in response:
-    #             dice.append(int(die))
-    #             kept_dice.append(int(die))
-    #
-    #         # Updates number of dice to re-roll
-    #         num = 6 - len(kept_dice)
-    #
-    #         # Calculate current number of points
-    #         points = game.calculate_score(dice)
-    #         print(f'You have {points} unbanked points and {6 - len(dice)} dice remaining')
-    #         print('(r)oll again, (b)ank your points or (q)uit:')
-    #
-    #         action = input('> ')
-    #
-    #         # Bank
-    #         if action == 'b' or action == 'bank':
-    #             total_score += points
-    #             print(f'You banked {points} points in round {round}')
-    #             print(f'Total score is {total_score} points')
-    #             round += 1
-    #
-    #         # Roll
-    #         if action == 'r' or action == 'roll':
-    #             round += 1
-    #             return
-    #
-    #         # Quit
-    #         if response == 'q' or response == 'quit':
-    #             print(f'Thanks for playing. You earned {total_score} points')
-    #             playing = False
 
     @staticmethod
     def announce_round():

@@ -1,5 +1,5 @@
 import pytest
-from ten_thousand.game_logic import GameLogic
+from ten_thousand.game import Game
 
 pytestmark = [pytest.mark.version_3]
 
@@ -17,5 +17,5 @@ pytestmark = [pytest.mark.version_3]
     ],
 )
 def test_get_scorers(test_input, expected):
-    actual = GameLogic.get_scorers(test_input)
+    actual = Game.get_scorers(test_input)
     assert sorted(actual) == sorted(expected)
