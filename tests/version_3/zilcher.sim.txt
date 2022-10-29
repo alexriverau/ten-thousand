@@ -15,7 +15,7 @@ Rolling 2 dice...
 **        Zilch!!! Round over         **
 ****************************************
 You banked 0 points in round 1
-Total score is 0 points
+
 Starting round 2
 Rolling 6 dice...
 *** 1 1 2 5 1 6 ***

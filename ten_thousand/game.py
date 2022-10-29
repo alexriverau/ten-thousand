@@ -1,8 +1,8 @@
 import sys
-from ten_thousand import game_logic
-from ten_thousand import banker
-#import game_logic
-#import banker
+#from ten_thousand import game_logic
+#from ten_thousand import banker
+import game_logic
+import banker
 
 
 class Game:
@@ -104,8 +104,30 @@ class Game:
         return action
 
     @staticmethod
+    def zilch():
+        print('****************************************')
+        print('**        Zilch!!! Round over         **')
+        print('****************************************')
+        print(f'You banked 0 points in round {Game.round_num}')
+        print(f'Total score is {Game.bank.balance} points')
+        Game.round_num += 1
+        Game.kept_dice = []
+
+    @staticmethod
+    def none_score(roll):
+        if Game.game.calculate_score(roll) == 0:
+            return True
+        else:
+            return False
+
+    @staticmethod
     def run_turn():
         roll = Game.rolling()
+
+        if Game.none_score(roll):
+            Game.zilch()
+            return
+
         selection = Game.get_player_selection(roll)
 
         if selection == 'q' or selection == 'quit':
