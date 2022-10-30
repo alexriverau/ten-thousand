@@ -121,6 +121,16 @@ class Game:
             return False
 
     @staticmethod
+    def hot_dice(roll):
+        # Calculate points for all kept dice
+        Game.kept_dice.extend(roll)
+        points = Game.game.calculate_score(Game.kept_dice)
+        Game.bank.shelf(points)
+        Game.kept_dice = []
+        print(f'You have {points} unbanked points and {Game.number_of_dice - len(Game.kept_dice)} dice remaining')
+        Game.run_turn()
+
+    @staticmethod
     def run_turn():
         roll = Game.rolling()
 
@@ -135,9 +145,9 @@ class Game:
             Game.quit(f'Thanks for playing. You earned {Game.bank.balance} points')
             return
 
-        # if len(selection) == len(roll) and Game.game.all_score(roll):
-        #     Game.hot_dice(roll)
-        #     return
+        if len(Game.game.get_scorers(selection)) == len(roll):
+            Game.hot_dice(selection)
+            return
 
         dice = Game.save_player_dice(selection)
         points = Game.game.calculate_score(dice)
