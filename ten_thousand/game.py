@@ -112,6 +112,7 @@ class Game:
         print(f'Total score is {Game.bank.balance} points')
         Game.round_num += 1
         Game.kept_dice = []
+        Game.bank.clear_shelf()
 
     @staticmethod
     def none_score(roll):
@@ -150,14 +151,16 @@ class Game:
             return
 
         dice = Game.save_player_dice(selection)
-        points = Game.game.calculate_score(dice)
-        print(f'You have {points} unbanked points and {Game.number_of_dice - len(Game.kept_dice)} dice remaining')
+        points = Game.game.calculate_score(Game.kept_dice)
+        print(f'You have {Game.bank.shelved + points} unbanked points and {Game.number_of_dice - len(Game.kept_dice)} '
+              f'dice '
+              f'remaining')
 
         action = Game.get_player_action()
 
         # Bank
         if action == 'b' or action == 'bank':
-            Game.bank.shelved = Game.game.calculate_score(Game.kept_dice)
+            Game.bank.shelf(Game.game.calculate_score(Game.kept_dice))
             banked_points = Game.bank.bank()
             print(f'You banked {banked_points} points in round {Game.round_num}')
             print(f'Total score is {Game.bank.balance} points')
